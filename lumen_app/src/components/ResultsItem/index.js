@@ -2,12 +2,10 @@ import React from "react";
 import RatingInput from "../Rating";
 import TextBox from "../TextBox";
 
-
 function ResultsItem({ title, link, category, language, comment }) {
-  
   return (
-    <div>
-      <TextBox className="results-item">
+    <div className="results-item">
+      <TextBox>
         <a href={link}>{title}</a>
       </TextBox>
       <TextBox>
@@ -19,7 +17,7 @@ function ResultsItem({ title, link, category, language, comment }) {
       <TextBox>
         <p>{comment}</p>
       </TextBox>
-      <RatingInput/>
+      <RatingInput />
     </div>
   );
 }

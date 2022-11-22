@@ -1,14 +1,17 @@
 .App {
   text-align: center;
+  background-color: #002147;
 }
 
 
 .App-header {
-  background-color: rgba(3, 152, 158, 0.34);
-  height: 206px;
+  background-color: rgba(3, 152, 158, 0.25);
+  /* 195, 222, 252 */
+  min-height: 150;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: auto;
+  align-self: flex-start;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   
@@ -17,8 +20,9 @@
 
 .page-header {
   font-family: "Big Shoulders Display";
-  font-size: 128px;
+  font-size: 190px;
   font-weight: 800;
+  margin: 2px;
   background: linear-gradient(to top,
   rgba(255,249,174, .8) 20%, 
   rgba(255,255,255, .3) 90%
@@ -29,24 +33,84 @@
   
 }
 
-.search-bar-container {
+.page-subheader {
+  font-family: "Big Shoulders Display";
+  font-size: auto;
+  margin: 10px;
+  color: white;
+
+}
+
+.add-and-search-container {
   display:flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  height: 59px;
+  justify-content: space-between;
+  min-height: 60px;
+  margin-top: 30px;
   width: auto;
-  background-color:#F8ECE1;
-  font-family: "Open Sans"
+  background-color: #E9DCC9;
+  font-family: "Open Sans";
+  font-size: 22px;
 }
 
 .search-bar {
   padding: 10px;
   margin: 5px 5px 5px 5px;
   padding-right: 200px;
-  font-family: "Open Sans"
+  margin-right: 100px;
+  margin-left: 10px;
+  font-family: "Open Sans";
+  font-size: 18px;
+  background-color: #C3DEFC;
 }
 
 .search-bar:focus {
-  outline: 4px solid #03989e;
+  outline: 4px solid  #002147;
+}
+
+.add-button {
+  font-family: "Open Sans";
+  font-size: 22px;
+  text-align: center;
+  margin-left: 100px;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: #C3DEFC;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px #999;
+}
+
+.add-button:hover {background-color: #82BBFB}
+
+.add-button:active {
+  background-color: #82BBFB;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.results-list-headings{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-family: "Open Sans";
+  color: white;
+  margin: 10px;
+
+}
+
+.results-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #C3DEFC
+}
+
+.footer {
+background-color: rgba(3, 152, 158, 0.25);
+  /* 195, 222, 252 */
+ margin-top: auto;
+ min-height: 100px;
 }

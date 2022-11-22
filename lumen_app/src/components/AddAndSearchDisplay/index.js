@@ -4,7 +4,6 @@ import SearchBar from "../SearchBar";
 import ResultsHeaders from "../ResultsHeaders";
 import ResultsItem from "../ResultsItem";
 import Button from "../Button";
-import "./SearchDisplay.css";
 
 function AddAndSearchDisplay() {
   const [searchValue, setSearchValue] = useState("");
@@ -32,33 +31,42 @@ function AddAndSearchDisplay() {
       eachItem.name.toLowerCase().includes(searchValue.toLowerCase().trim())
     )
       return eachItem;
+    else if (
+      eachItem.url.toLowerCase().includes(searchValue.toLowerCase().trim())
+    )
+      return eachItem;
   });
 
   return (
     <div>
-      <Button
-        className="add-button"
-        handleClick={() => setButtonPopup(true)}
-        text="Add a resource"
-      />
-      <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}></PopUp>
-      <SearchBar
-        value={searchValue}
-        handleChange={handleChange}
-        className="search-bar"
-      />
-      <ResultsHeaders />
-      {filteredResults.map((eachItem, key) => {
-        return (
-          <ResultsItem
-            key={key}
-            title={eachItem.name}
-            category={eachItem.url}
-            language={eachItem.name}
-            comment={eachItem.url}
-          />
-        );
-      })}
+      <section className="add-and-search-container">
+        <Button
+          className="add-button"
+          handleClick={() => setButtonPopup(true)}
+          text="Add a resource"
+        />
+        <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}></PopUp>
+        <SearchBar
+          value={searchValue}
+          handleChange={handleChange}
+          className="search-bar"
+        />
+      </section>
+      <section className="results-list">
+        <ResultsHeaders />
+        {filteredResults.map((eachItem, key) => {
+          return (
+            <ResultsItem
+              key={key}
+              title={eachItem.name}
+              category={eachItem.url}
+              language={eachItem.name}
+              comment={eachItem.url}
+              link={eachItem.name}
+            />
+          );
+        })}
+      </section>
     </div>
   );
 }
