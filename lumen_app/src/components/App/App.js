@@ -10,17 +10,12 @@ const [buttonPopup, setButtonPopup]= useState (false);
 
   return (
     <div className="App">
-      <header className="App-header">
-
-        <main>
-
+      <main>
           <button onClick={()=>setButtonPopup(true)}>Add you resources</button>
+      </main>
 
-        </main>
-<PopUp trigger={buttonPopup} setTrigger={setButtonPopup} >
-
-</PopUp>
-      </header>
+<PopUp trigger={buttonPopup} setTrigger={setButtonPopup}></PopUp>
+     
     </div>
   );
 }
