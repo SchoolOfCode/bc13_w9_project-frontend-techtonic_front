@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import PopUp from "../PopUp/PopUp";
 import SearchBar from "../SearchBar";
 import ResultsHeaders from "../ResultsHeaders";
 import ResultsItem from "../ResultsItem";
+import Button from "../Button";
 import "./SearchDisplay.css";
 
-function SearchDisplay() {
+function AddAndSearchDisplay() {
   const [searchValue, setSearchValue] = useState("");
   const [resources, setResources] = useState([]);
 
@@ -31,8 +33,16 @@ function SearchDisplay() {
       return eachItem;
   });
 
+  const [buttonPopup, setButtonPopup] = useState(false);
+
   return (
     <div>
+      <Button
+        className="add-button"
+        handleClick={() => setButtonPopup(true)}
+        text="Add a resource"
+      />
+      <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}></PopUp>
       <SearchBar
         value={searchValue}
         handleChange={handleChange}
@@ -54,4 +64,4 @@ function SearchDisplay() {
   );
 }
 
-export default SearchDisplay;
+export default AddAndSearchDisplay;
