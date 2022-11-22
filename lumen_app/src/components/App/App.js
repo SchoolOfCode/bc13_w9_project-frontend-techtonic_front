@@ -1,10 +1,15 @@
-import "./App.css";
+import './App.css';
+import React from 'react';
+import { useState, useEffect } from 'react';
+import PopUp from '../PopUp/PopUp';
 import SearchDisplay from "../SearchDisplay";
 import WebFont from "webfontloader";
-import { useEffect } from "react";
+
 
 function App() {
-  useEffect(() => {
+const [buttonPopup, setButtonPopup]= useState (false);
+
+useEffect(() => {
     WebFont.load({
       google: {
         families: ["Big Shoulders Display", "Open Sans"],
@@ -18,11 +23,15 @@ function App() {
         <h1 className="page-header">LUMEN</h1>
       </header>
       <body className="App-body">
+      <button onClick={()=>setButtonPopup(true)}>Add you resources</button>
+       <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}></PopUp>
         <SearchDisplay />
       </body>
       <footer></footer>
     </div>
   );
 }
+
+
 
 export default App;
