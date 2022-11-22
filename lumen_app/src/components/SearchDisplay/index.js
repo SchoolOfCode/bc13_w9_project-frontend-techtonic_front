@@ -20,7 +20,7 @@ function SearchDisplay() {
       console.log(resources);
     }
     getResources();
-  }, [searchValue]);
+  }, [resources]);
 
   const filteredResults = resources.filter((eachItem) => {
     if (searchValue === "") return eachItem;
