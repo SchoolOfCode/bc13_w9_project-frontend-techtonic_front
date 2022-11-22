@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import SearchBar from "../SearchBar";
 import ResultsHeaders from "../ResultsHeaders";
 import ResultsItem from "../ResultsItem";
+import "./SearchDisplay.css";
 
 function SearchDisplay() {
   const [searchValue, setSearchValue] = useState("");

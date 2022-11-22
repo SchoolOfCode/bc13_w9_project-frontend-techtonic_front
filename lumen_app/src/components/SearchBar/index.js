@@ -1,15 +1,16 @@
 import React from "react";
 
+
 function SearchBar({ value, className, handleChange }) {
   return (
-    <div>
+    <div className="search-bar-container">
       <label for="search">Find Resources:</label>
       <input
         name="search"
         type="text"
         value={value}
         onChange={handleChange}
-        placeholder="Search..."
+        placeholder="Search by topic..."
         className={className}
       />
     </div>
