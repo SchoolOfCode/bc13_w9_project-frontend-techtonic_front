@@ -9,6 +9,7 @@ import "./SearchDisplay.css";
 function AddAndSearchDisplay() {
   const [searchValue, setSearchValue] = useState("");
   const [resources, setResources] = useState([]);
+  const [buttonPopup, setButtonPopup] = useState(false);
 
   function handleChange(e) {
     setSearchValue(e.target.value);
@@ -32,8 +33,6 @@ function AddAndSearchDisplay() {
     )
       return eachItem;
   });
-
-  const [buttonPopup, setButtonPopup] = useState(false);
 
   return (
     <div>
