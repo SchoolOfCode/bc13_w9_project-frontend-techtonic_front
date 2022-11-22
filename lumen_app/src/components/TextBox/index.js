@@ -1,8 +1,12 @@
 import React from "react";
 
-function TextBox ({children}){
-    return <section>{children}</section>
+function TextBox({ children, text }) {
+  return (
+    <section>
+      {children}
+      {text}
+    </section>
+  );
 }
-
 
 export default TextBox;
