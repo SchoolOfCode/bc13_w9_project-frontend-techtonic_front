@@ -45,7 +45,11 @@ function AddAndSearchDisplay() {
           handleClick={() => setButtonPopup(true)}
           text="Add a resource"
         />
-        <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}></PopUp>
+        <PopUp
+          className="pop-up"
+          trigger={buttonPopup}
+          setTrigger={setButtonPopup}
+        />
         <SearchBar
           value={searchValue}
           handleChange={handleChange}

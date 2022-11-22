@@ -108,9 +108,15 @@
   background-color: #C3DEFC
 }
 
+.results-list {
+  overflow-y: scroll; 
+  height:500px;
+}
+
 .footer {
 background-color: rgba(3, 152, 158, 0.25);
   /* 195, 222, 252 */
  margin-top: auto;
  min-height: 100px;
 }
+
