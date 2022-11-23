@@ -1,9 +1,9 @@
 
 
 
-.App-header {
+/*.App-header {
   background-color: rgba(3, 152, 158, 0.25);
-  /* 195, 222, 252 */
+  /* 195, 222, 252 
   min-height: 150;
   display: flex;
   flex-direction: column;
@@ -13,8 +13,15 @@
   font-size: calc(10px + 2vmin);
   
   
+}*/
+label {
+  margin-left: 10px;
 }
 
+
+.css-dqr9h-MuiRating-label{
+  text-align: right;
+}
 .page-header {
   font-family: "Big Shoulders Display";
   font-size: 190px;
@@ -52,7 +59,7 @@
 }
 
 .search-bar {
-  padding: 10px;
+  padding: 15px;
   margin: 5px 5px 5px 5px;
   padding-right: 200px;
   margin-right: 100px;
@@ -70,7 +77,9 @@
   font-family: "Open Sans";
   font-size: 22px;
   text-align: center;
-  margin-left: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 10px;
   cursor: pointer;
   outline: none;
   color: black;
@@ -88,26 +97,59 @@
   transform: translateY(4px);
 }
 
-.results-list-headings{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+/*.results-list-headings{
+  display: grid;
+  margin-top: 200px;
+  margin-bottom: 500px;
   font-family: "Open Sans";
   color: white;
-  margin: 10px;
+  
 
-}
+}*/
 
 .results-item {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  display: grid;
+  padding: 50px;
   background-color: #C3DEFC
 }
+
 
 .results-list {
   overflow-y: scroll; 
   height:500px;
+  display: grid;
+  align-items: center;
+  column-gap: 5px;
+  row-gap: 6px;
+  align-items: center;
+  align-content: center;
+  margin-left: 20px;
+  padding-top: 600px;
+  margin-top: 100px;
+  
+  
+}
+
+#resource-link {
+  font-family: "Open Sans";
+  font-size: 20px;
+}
+#resource-category {
+  font-family: "Open Sans";
+  font-size: 18px;
+  text-decoration: dashed;
+}
+#resource-language {
+  font-family: "Open Sans";
+  font-size: 18px;
+}
+#resource-comment {
+  font-family: "Open Sans";
+  font-size: 14px;
+}
+#resource-date {
+  font-family: "Open Sans";
+  font-size: 12px;
 }
 
 .footer {
@@ -117,3 +159,36 @@ background-color: rgba(3, 152, 158, 0.25);
  min-height: 100px;
 }
 
+.App-header {
+  min-height: 150;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  border-bottom: 1px solid white;
+  
+  background: linear-gradient(270deg, #3aa186, #1977d4, #89c1b7);
+  background-size: 600% 600%;
+
+  -webkit-animation: lumenheader 15s ease infinite;
+  -moz-animation: lumenheader 15s ease infinite;
+  animation: lumenheader 15s ease infinite;
+}
+
+@-webkit-keyframes lumenheader {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes lumenheader {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes lumenheader {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}

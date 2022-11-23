@@ -6,19 +6,19 @@ function ResultsItem({ title, link, category, language, comment, date }) {
   return (
     <div className="results-item">
       <TextBox>
-        <a href={link}>{title}</a>
+        <a id="resource-link" href={link}>{title}</a>
       </TextBox>
       <TextBox>
-        <p>{category}</p>
+        <p id="resource-category">{category}</p>
       </TextBox>
       <TextBox>
-        <p>{language}</p>
+        <p id="resource-language">{language}</p>
       </TextBox>
       <TextBox>
-        <p>{comment}</p>
+        <p id="resource-comment">{comment}</p>
       </TextBox>
       <TextBox>
-        <p>{date}</p>
+        <p id="resource-date">{date}</p>
       </TextBox>
       <RatingInput />
     </div>

@@ -20,6 +20,7 @@
     align-items: center;
     padding: 32px;
     margin-top: 10vh;
+    border: 1px solid whitesmoke;
     width: auto;
     min-height: 60vh;
     background-color:#E9DCC9;
@@ -44,6 +45,7 @@
     display: flex;
     flex: 1;
     justify-content: center;
+    text-align: center;
     align-items: center;
     font-family: "Open Sans";
     font-size: 18px;

@@ -1,11 +1,64 @@
 body {
+  margin: 0;
+  background-color: #002147;
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+  background: linear-gradient(149deg, #1f3958, #dbd6cd);;
+  background-size: 400% 400%;
+
+  -webkit-animation: lumenpagebackground 15s ease infinite;
+  -moz-animation: lumenpagebackground 15s ease infinite;
+  animation: lumenpagebackground 15s ease infinite;
+}
+
+@-webkit-keyframes lumenpagebackground {
+  0%{background-position:27% 0%}
+  50%{background-position:74% 100%}
+  100%{background-position:27% 0%}
+}
+@-moz-keyframes lumenpagebackground {
+  0%{background-position:27% 0%}
+  50%{background-position:74% 100%}
+  100%{background-position:27% 0%}
+}
+@keyframes lumenpagebackground {
+  0%{background-position:27% 0%}
+  50%{background-position:74% 100%}
+  100%{background-position:27% 0%}
+}
+
+/*body {
     background-color: #002147;
     min-height: 100vh;
     display:flex;
     flex-direction: column;
-  }
-  
+    
+  }*/
+
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
+  }
+
+  #resource-link {
+    font-family: "Open Sans";
+    font-size: 20px;
+  }
+  #resource-category {
+    font-family: "Open Sans";
+    font-size: 18px;
+    text-decoration: dashed;
+  }
+  #resource-language {
+    font-family: "Open Sans";
+    font-size: 18px;
+  }
+  #resource-comment {
+    font-family: "Open Sans";
+    font-size: 14px;
+  }
+  #resource-date {
+    font-family: "Open Sans";
+    font-size: 12px;
   }
