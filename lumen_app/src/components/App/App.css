@@ -104,11 +104,33 @@
 }
 
 .footer {
-background-color: rgba(3, 152, 158, 0.25);
-  /* 195, 222, 252 */
- margin-top: auto;
- min-height: 100px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+ }
+
+.footer h1 {
+ max-height: 200px;
+ font-family: "Big Shoulders Display";
+ font-size: 190px;
+font-weight: 400;
+background: linear-gradient(to top,
+rgba(246,	195,	69,  .8) 20%, 
+rgba(230,	145,	56, .3) 90%
+);
+background-clip:text;
+color:transparent;
 }
+
+.footer h2 {
+  font-family: "Big Shoulders Display";
+  font-size: 50px;
+ font-weight: 100;
+ color:white;
+ }
+
+
 
 .results-table{
   width:100%;
