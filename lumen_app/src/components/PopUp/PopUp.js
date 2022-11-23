@@ -1,6 +1,7 @@
 import React from "react";
 import "./PopUp.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import WebFont from "webfontloader";
 
 function PopUp(props) {
   const [title, setTitle] = useState("");
@@ -9,10 +10,36 @@ function PopUp(props) {
   const [language, setLanguage] = useState("");
   const [description, setDescription] = useState("");
 
+  const [post, setPost] = useState({});
+  // const [clicked, setClicked] = useState(false)
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Big Shoulders Display", "Open Sans"],
+      },
+    });
+  }, []);
+
+  // useEffect(() => {
+  //   async function postResource() {
+  //     await fetch("http://localhost:3001/api/resources", {
+  //       method: "POST",
+  //       body: JSON.stringify(post),
+  //     });
+  //   }
+  //   postResource();
+  // }, []);
+
   function handleSubmit(e) {
     e.preventDefault();
-    const addResources = { title, topic, url, description, language };
-    console.log(addResources);
+    setPost({
+      title: title,
+      url: url,
+      language: language,
+      category_id: topic,
+      submission_notes: description,
+    });
   }
 
   return props.trigger ? (
@@ -76,13 +103,13 @@ function PopUp(props) {
                 <option value="" disabled selected>
                   Select your option
                 </option>
-                <option value="game">Game</option>
-                <option value="workshop">Workshop</option>
-                <option value="video">Video</option>
-                <option value="blog">Blog/Forum</option>
-                <option value="eli5">Eli5</option>
-                <option value="officalDocs">Offical Docs</option>
-                <option value="other">Other</option>
+                <option value={1}>Game</option>
+                <option value={2}>Workshop</option>
+                <option value={3}>Video</option>
+                <option value={4}>Blog/Forum</option>
+                <option value={5}>Eli5</option>
+                <option value={6}>Offical Docs</option>
+                <option value={7}>Other</option>
               </select>
               <br></br>
               <br></br>
@@ -95,11 +122,6 @@ function PopUp(props) {
             </div>
             <button id="close-btn">Submit</button>
             {props.children}
-            <p>{title}</p>
-            <p>{topic}</p>
-            <p>{url}</p>
-            <p>{language}</p>
-            <p>{description}</p>
           </form>
         </div>
       </div>
