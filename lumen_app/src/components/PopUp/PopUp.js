@@ -24,7 +24,7 @@ function PopUp(props) {
         {props.children}
 
         <div className="form">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={() => handleSubmit}>
             <label>Title</label>
 
             <div className="details_form">
@@ -76,13 +76,13 @@ function PopUp(props) {
                 <option value="" disabled selected>
                   Select your option
                 </option>
-                <option value="game">Game</option>
-                <option value="workshop">Workshop</option>
-                <option value="video">Video</option>
-                <option value="blog">Blog/Forum</option>
-                <option value="eli5">Eli5</option>
-                <option value="officalDocs">Offical Docs</option>
-                <option value="other">Other</option>
+                <option value={1}>Game</option>
+                <option value={2}>Workshop</option>
+                <option value={3}>Video</option>
+                <option value={4}>Blog/Forum</option>
+                <option value={5}>Eli5</option>
+                <option value={6}>Offical Docs</option>
+                <option value={7}>Other</option>
               </select>
               <br></br>
               <br></br>
