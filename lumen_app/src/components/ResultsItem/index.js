@@ -5,7 +5,7 @@ function ResultsItem({ results }) {
   return (
     <div className="results-item">
       <table className="results-table">
-        <tr>
+        <tr className="table-headers">
           <th>Title</th>
           <th>Category</th>
           <th>Language</th>

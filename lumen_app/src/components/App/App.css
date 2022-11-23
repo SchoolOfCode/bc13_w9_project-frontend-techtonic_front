@@ -24,7 +24,7 @@
   font-weight: 800;
   margin: 2px;
   background: linear-gradient(to top,
-  rgba(255,249,174, .8) 20%, 
+  rgba(255,249,174,  .8) 20%, 
   rgba(255,255,255, .3) 90%
 );
   background-clip:text;
@@ -49,7 +49,7 @@
   min-height: 60px;
   margin-top: 30px;
   width: auto;
-  background-color: #E9DCC9;
+  background-color: #FFFDDD;
   font-family: "Open Sans";
   font-size: 22px;
 }
@@ -91,16 +91,6 @@
   transform: translateY(4px);
 }
 
-.results-list-headings{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  font-family: "Open Sans";
-  color: white;
-  margin: 10px;
-
-}
-
 .results-item {
   display: flex;
   justify-content: space-around;
@@ -121,5 +111,15 @@ background-color: rgba(3, 152, 158, 0.25);
 }
 
 .results-table{
-  width:100%
+  width:100%;
+  font-family: "Open Sans";
+  font-size:large
+}
+
+.table-headers{
+  font-family: "Big Shoulders Display";
+  font-weight:800;
+  font-size:25px;
+  color:    rgba(255,249,174) ;
+  background-color: #002147;
 }
