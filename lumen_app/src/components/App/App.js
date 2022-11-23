@@ -20,9 +20,9 @@ function App() {
         <h1 className="page-header">LUMEN</h1>
         <h2 className="page-subheader">ENLIGHTEN YOUR LEARNING</h2>
       </header>
-      <body className="App-body">
+      <main className="App-body">
         <AddAndSearchDisplay />
-      </body>
+      </main>
       <footer className="footer"></footer>
     </div>
   );

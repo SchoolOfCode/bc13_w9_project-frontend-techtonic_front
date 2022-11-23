@@ -9,6 +9,7 @@ function PopUp(props) {
   const [url, setUrl] = useState("");
   const [language, setLanguage] = useState("");
   const [description, setDescription] = useState("");
+  const [submit, setSubmit] = useState(false);
 
   useEffect(() => {
     WebFont.load({
@@ -47,6 +48,12 @@ function PopUp(props) {
   function handleSubmit(e) {
     e.preventDefault();
     postResource();
+    setSubmit(true);
+    setDescription("");
+    setLanguage("");
+    setTitle("");
+    setUrl("");
+    setTopic("");
   }
 
   return props.trigger ? (
@@ -55,8 +62,7 @@ function PopUp(props) {
         <button className="close-btn" onClick={() => props.setTrigger(false)}>
           Close
         </button>
-        {props.children}
-
+        {submit && <p>You have successfully added a resource</p>}
         <div className="form">
           <form onSubmit={handleSubmit}>
             <label>Title</label>
@@ -130,7 +136,6 @@ function PopUp(props) {
             <button id="close-btn" type="submit">
               Submit
             </button>
-            {props.children}
           </form>
         </div>
       </div>
