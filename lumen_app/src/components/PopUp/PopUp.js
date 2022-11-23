@@ -1,8 +1,18 @@
 import React from "react";
 import "./PopUp.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import WebFont from "webfontloader";
 
 function PopUp(props) {
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Big Shoulders Display", "Open Sans"],
+      },
+    });
+  }, []);
+
   const [title, setTitle] = useState("");
   const [topic, setTopic] = useState("");
   const [url, setUrl] = useState("");
