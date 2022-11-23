@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    min-width: 100%;
     height: 100vh;
     background-color: rgba(0,0,0,0.2);
     display: flex;
@@ -18,9 +18,10 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 32px;
-    width: 100%;
-    max-width: 400px;
+    width: auto;
+    height: auto;
     background-color:#E9DCC9;
+    box-shadow: 1px 1px 100px #CDCBC1;
 }
 
 .popup-inner .close-btn {
