@@ -18,8 +18,8 @@ function AddAndSearchDisplay() {
     async function getResources() {
       const response = await fetch("http://localhost:3001/api/resources");
       const data = await response.json();
-      console.log(data);
-      setResources([...data]);
+      console.log(data.payload);
+      setResources([...data.payload]);
       console.log(resources);
     }
     getResources();

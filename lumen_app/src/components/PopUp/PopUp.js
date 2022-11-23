@@ -10,6 +10,7 @@ function PopUp(props) {
   const [url, setUrl] = useState("");
   const [language, setLanguage] = useState("");
   const [description, setDescription] = useState("");
+  const [submitStatus, setSubmitStatus] = useState(false);
 
 
   useEffect(() => {
@@ -26,41 +27,25 @@ function PopUp(props) {
   // return data.id
    
 
-  // useEffect(() =>  {
+  useEffect(() =>  {
     
-  //       async function postResource() {
-  //         const response = await fetch("localhost:3001/api/resources",
-  //           {method: "POST", 
-  //           body: JSON.stringify({title:title, url:url, language:language, category_id:topic})
-  //           }
-  //         )
+        async function postResource() {
+          const response = await fetch("localhost:3001/api/resources",
+            {method: "POST", 
+            body: JSON.stringify({title:title, url:url, language:language, category_id:topic, sumission_notes:description})
+            }
+          )
+          const data = await response.json()
+        }
+        postResource()
+      },[title, url,language, topic, description, submitStatus]
+  );
           
-  //       useQuery(() => {
-          
-  //         async function postNotes(){
-  //           const response = await fetch("localhost:3001/api/notes",
-  //           {method: "POST", 
-  //           body: JSON.stringify({resource_id:resourceId, submission_notes:description})
-  //           }
-  //           )
-  //         }
-        
-  //       },
-            
-  //           {
-  //           enabled: !!resourceId, //
-  //           }
-  //       )
-
-      
-  //   })
-
-  // }, []);  
+  
 
   function handleSubmit(e) {
     e.preventDefault();
-    const addResources = { title, topic, url, description, language };
-    console.log(addResources);
+    setSubmitStatus(!submitStatus);
     
   }
 
