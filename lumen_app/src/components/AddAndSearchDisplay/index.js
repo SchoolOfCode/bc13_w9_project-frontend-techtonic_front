@@ -68,7 +68,6 @@ function AddAndSearchDisplay() {
         />
       </section>
       <section className="results-list">
-        <ResultsHeaders />
         {filteredResults.map((eachItem, key) => {
           return (
             <ResultsItem
