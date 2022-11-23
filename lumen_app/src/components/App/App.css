@@ -79,8 +79,10 @@
   color: black;
   background-color: #C3DEFC;
   border: none;
-  border-radius: 15px;
-  box-shadow: 0 6px #999;
+  border-radius: 14px;
+  padding-left: 18px;
+  padding-right: 18px;
+  box-shadow: 0 6px rgb(187, 187, 187);
 }
 
 .add-button:hover {background-color: #82BBFB}

@@ -20,7 +20,9 @@
     padding: 32px;
     width: 100%;
     max-width: 400px;
-    background-color:#E9DCC9;
+    border-radius: 10px;
+    box-shadow: 1px 1px 100px #cdcbc1;
+    background-color:#1790a0;
 }
 
 .popup-inner .close-btn {
@@ -32,8 +34,8 @@
 
 .form {
     display: flex;
-    height: 40vh;
-    width: 30vh;
+    height: 60vh;
+    width: 20vh;
     justify-content: center;
     align-items: center;
     padding: 25px 30px;
