@@ -1,16 +1,16 @@
 import React from "react";
 import "./PopUp.css";
-import { useState, useEffect, useQuery } from "react";
+import { useState, useEffect } from "react";
 import WebFont from "webfontloader";
 
 function PopUp(props) {
-
   const [title, setTitle] = useState("");
   const [topic, setTopic] = useState("");
   const [url, setUrl] = useState("");
   const [language, setLanguage] = useState("");
   const [description, setDescription] = useState("");
-
+  const [post, setPost] = useState({});
+  // const [clicked, setClicked] = useState(false)
 
   useEffect(() => {
     WebFont.load({
@@ -20,48 +20,25 @@ function PopUp(props) {
     });
   }, []);
 
-  // On Addresource -> Fetch POST into resource table
-  // const response = fetch...
-  // const data = await response.json() 
-  // return data.id
-   
-
-  // useEffect(() =>  {
-    
-  //       async function postResource() {
-  //         const response = await fetch("localhost:3001/api/resources",
-  //           {method: "POST", 
-  //           body: JSON.stringify({title:title, url:url, language:language, category_id:topic})
-  //           }
-  //         )
-          
-  //       useQuery(() => {
-          
-  //         async function postNotes(){
-  //           const response = await fetch("localhost:3001/api/notes",
-  //           {method: "POST", 
-  //           body: JSON.stringify({resource_id:resourceId, submission_notes:description})
-  //           }
-  //           )
-  //         }
-        
-  //       },
-            
-  //           {
-  //           enabled: !!resourceId, //
-  //           }
-  //       )
-
-      
-  //   })
-
-  // }, []);  
+  // useEffect(() => {
+  //   async function postResource() {
+  //     await fetch("http://localhost:3001/api/resources", {
+  //       method: "POST",
+  //       body: JSON.stringify(post),
+  //     });
+  //   }
+  //   postResource();
+  // }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
-    const addResources = { title, topic, url, description, language };
-    console.log(addResources);
-    
+    setPost({
+      title: title,
+      url: url,
+      language: language,
+      category_id: topic,
+      submission_notes: description,
+    });
   }
 
   return props.trigger ? (

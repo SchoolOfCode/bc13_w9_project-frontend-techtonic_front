@@ -18,8 +18,8 @@ function AddAndSearchDisplay() {
     async function getResources() {
       const response = await fetch("http://localhost:3001/api/resources");
       const data = await response.json();
-      console.log(data);
-      setResources([...data]);
+      console.log(data.payload);
+      setResources([...data.payload]);
       console.log(resources);
     }
     getResources();
@@ -28,11 +28,19 @@ function AddAndSearchDisplay() {
   const filteredResults = resources.filter((eachItem) => {
     if (searchValue === "") return eachItem;
     else if (
-      eachItem.name.toLowerCase().includes(searchValue.toLowerCase().trim())
+      eachItem.title.toLowerCase().includes(searchValue.toLowerCase().trim())
     )
       return eachItem;
     else if (
       eachItem.url.toLowerCase().includes(searchValue.toLowerCase().trim())
+    )
+      return eachItem;
+    else if (
+      eachItem.language.toLowerCase().includes(searchValue.toLowerCase().trim())
+    )
+      return eachItem;
+    else if (
+      eachItem.category.toLowerCase().includes(searchValue.toLowerCase().trim())
     )
       return eachItem;
   });
@@ -62,11 +70,11 @@ function AddAndSearchDisplay() {
           return (
             <ResultsItem
               key={key}
-              title={eachItem.name}
-              category={eachItem.url}
-              language={eachItem.name}
-              comment={eachItem.url}
-              link={eachItem.name}
+              title={eachItem.title}
+              category={eachItem.category}
+              language={eachItem.language}
+              comment={eachItem.submission_notes}
+              link={eachItem.url}
             />
           );
         })}
