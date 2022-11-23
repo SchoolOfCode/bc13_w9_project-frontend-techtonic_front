@@ -26,36 +26,36 @@ function PopUp(props) {
   // return data.id
    
 
-  useEffect(() =>  {
+  // useEffect(() =>  {
     
-        async function postResource() {
-          const response = await fetch("localhost:3001/api/resources",
-            {method: "POST", 
-            body: JSON.stringify({title:title, url:url, language:language, category_id:topic})
-            }
-          )
+  //       async function postResource() {
+  //         const response = await fetch("localhost:3001/api/resources",
+  //           {method: "POST", 
+  //           body: JSON.stringify({title:title, url:url, language:language, category_id:topic})
+  //           }
+  //         )
           
-        useQuery(() => {
+  //       useQuery(() => {
           
-          async function postNotes(){
-            const response = await fetch("localhost:3001/api/notes",
-            {method: "POST", 
-            body: JSON.stringify({resource_id:resourceId, submission_notes:description})
-            }
-            )
-          }
+  //         async function postNotes(){
+  //           const response = await fetch("localhost:3001/api/notes",
+  //           {method: "POST", 
+  //           body: JSON.stringify({resource_id:resourceId, submission_notes:description})
+  //           }
+  //           )
+  //         }
         
-        },
+  //       },
             
-            {
-            enabled: !!resourceId, //
-            }
-        )
+  //           {
+  //           enabled: !!resourceId, //
+  //           }
+  //       )
 
       
-    })
+  //   })
 
-  }, []);  
+  // }, []);  
 
   function handleSubmit(e) {
     e.preventDefault();

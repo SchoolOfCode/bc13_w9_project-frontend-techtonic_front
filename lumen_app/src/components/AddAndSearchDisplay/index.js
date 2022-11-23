@@ -16,7 +16,7 @@ function AddAndSearchDisplay() {
 
   useEffect(() => {
     async function getResources() {
-      const response = await fetch("https://localhost:3001/api/resources");
+      const response = await fetch("http://localhost:3001/api/resources");
       const data = await response.json();
       console.log(data);
       setResources([...data]);
