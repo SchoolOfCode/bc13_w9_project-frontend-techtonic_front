@@ -23,7 +23,7 @@ function AddAndSearchDisplay() {
       console.log(resources);
     }
     getResources();
-  }, [resources]);
+  }, [searchValue]);
 
   const filteredResults = resources.filter((eachItem) => {
     if (searchValue === "") return eachItem;
