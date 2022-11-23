@@ -24,7 +24,7 @@ function PopUp(props) {
         {props.children}
 
         <div className="form">
-          <form onSubmit={() => handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <label>Title</label>
 
             <div className="details_form">
@@ -95,11 +95,6 @@ function PopUp(props) {
             </div>
             <button id="close-btn">Submit</button>
             {props.children}
-            <p>{title}</p>
-            <p>{topic}</p>
-            <p>{url}</p>
-            <p>{language}</p>
-            <p>{description}</p>
           </form>
         </div>
       </div>
