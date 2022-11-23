@@ -2,7 +2,7 @@ import React from "react";
 import RatingInput from "../Rating";
 import TextBox from "../TextBox";
 
-function ResultsItem({ title, link, category, language, comment }) {
+function ResultsItem({ title, link, category, language, comment, date }) {
   return (
     <div className="results-item">
       <TextBox>
@@ -16,6 +16,9 @@ function ResultsItem({ title, link, category, language, comment }) {
       </TextBox>
       <TextBox>
         <p>{comment}</p>
+      </TextBox>
+      <TextBox>
+        <p>{date}</p>
       </TextBox>
       <RatingInput />
     </div>

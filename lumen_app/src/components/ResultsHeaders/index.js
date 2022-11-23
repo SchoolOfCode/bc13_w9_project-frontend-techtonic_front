@@ -8,6 +8,7 @@ function ResultsHeaders() {
       <TextBox className="list-headings" text="Category" />
       <TextBox className="list-headings" text="Language" />
       <TextBox className="list-headings" text="Comment" />
+      <TextBox className="list-headings" text="Date Added" />
       <TextBox className="list-headings" text="Rating" />
     </div>
   );
