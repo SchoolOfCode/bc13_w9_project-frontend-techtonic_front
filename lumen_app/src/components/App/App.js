@@ -23,7 +23,10 @@ function App() {
       <body className="App-body">
         <AddAndSearchDisplay />
       </body>
-      <footer className="footer"></footer>
+      <footer className="footer">
+        <h1>TechTonic</h1>
+        <h2>A Resource API For Tech Students</h2>
+      </footer>
     </div>
   );
 }

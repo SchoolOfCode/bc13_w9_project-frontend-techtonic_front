@@ -1,4 +1,7 @@
-
+.App {
+  text-align: center;
+  background-color: #002147;
+}
 
 
 .App-header {
@@ -7,7 +10,7 @@
   min-height: 150;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: auto;
   align-self: flex-start;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -21,7 +24,7 @@
   font-weight: 800;
   margin: 2px;
   background: linear-gradient(to top,
-  rgba(255,249,174, .8) 20%, 
+  rgba(255,249,174,  .8) 20%, 
   rgba(255,255,255, .3) 90%
 );
   background-clip:text;
@@ -46,7 +49,7 @@
   min-height: 60px;
   margin-top: 30px;
   width: auto;
-  background-color: #E9DCC9;
+  background-color: #FFFDDD;
   font-family: "Open Sans";
   font-size: 22px;
 }
@@ -88,16 +91,6 @@
   transform: translateY(4px);
 }
 
-.results-list-headings{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  font-family: "Open Sans";
-  color: white;
-  margin: 10px;
-
-}
-
 .results-item {
   display: flex;
   justify-content: space-around;
@@ -111,9 +104,44 @@
 }
 
 .footer {
-background-color: rgba(3, 152, 158, 0.25);
-  /* 195, 222, 252 */
- margin-top: auto;
- min-height: 100px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+ }
+
+.footer h1 {
+ max-height: 200px;
+ font-family: "Big Shoulders Display";
+ font-size: 190px;
+font-weight: 400;
+background: linear-gradient(to top,
+rgba(246,	195,	69,  .8) 20%, 
+rgba(230,	145,	56, .3) 90%
+);
+background-clip:text;
+color:transparent;
 }
 
+.footer h2 {
+  font-family: "Big Shoulders Display";
+  font-size: 50px;
+ font-weight: 100;
+ color:white;
+ }
+
+
+
+.results-table{
+  width:100%;
+  font-family: "Open Sans";
+  font-size:20px;
+}
+
+.table-headers{
+  font-family: "Big Shoulders Display";
+  font-weight:800;
+  font-size:40px;
+  color:    rgba(255,249,174) ;
+  background-color: #002147;
+}
