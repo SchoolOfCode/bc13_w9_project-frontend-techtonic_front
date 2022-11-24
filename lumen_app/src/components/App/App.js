@@ -24,8 +24,8 @@ function App() {
         <AddAndSearchDisplay />
       </main>
       <footer className="footer">
-        <h1>TechTonic</h1>
-        <h2>A Resource API For Tech Students</h2>
+        <h1>TECHTONIC</h1>
+        <h2>Ground-Breaking Software Solutions</h2>
       </footer>
     </div>
   );

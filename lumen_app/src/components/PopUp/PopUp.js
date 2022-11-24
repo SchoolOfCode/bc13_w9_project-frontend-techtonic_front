@@ -59,10 +59,16 @@ function PopUp(props) {
   return props.trigger ? (
     <div className="popup">
       <div className="popup-inner">
-        <button className="close-btn" onClick={() => props.setTrigger(false)}>
+        <button className="popup-btn" onClick={() => props.setTrigger(false)}>
           Close
         </button>
-        {submit && <p>You have successfully added a resource</p>}
+        {submit === true && (
+          <p id="success-message">
+            You have successfully added a resource.
+            <br></br>
+            How about another one?
+          </p>
+        )}
         <div className="form">
           <form onSubmit={handleSubmit}>
             <label>Title</label>
@@ -97,12 +103,12 @@ function PopUp(props) {
                 <option value="" disabled selected>
                   Select your option
                 </option>
-                <option value="javascript">Javascript</option>
-                <option value="html">HTML</option>
-                <option value="css">CSS</option>
-                <option value="sql">SQL</option>
-                <option value="reactjs">ReactJs</option>
-                <option value="nodejs">NodeJs</option>
+                <option value="JavaScript">Javascript</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="SQL">SQL</option>
+                <option value="ReactJS">ReactJS</option>
+                <option value="NodeJS">NodeJS</option>
               </select>
               <br></br>
               <br></br>
@@ -133,7 +139,7 @@ function PopUp(props) {
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
             </div>
-            <button id="close-btn" type="submit">
+            <button className="popup-btn" type="submit">
               Submit
             </button>
           </form>
