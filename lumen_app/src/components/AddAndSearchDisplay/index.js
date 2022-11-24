@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PopUp from "../PopUp/PopUp";
 import SearchBar from "../SearchBar";
-import ResultsHeaders from "../ResultsHeaders";
-import ResultsItem from "../ResultsItem";
+import ResultsTable from "../ResultsTable";
 import Button from "../Button";
 
 function AddAndSearchDisplay() {
@@ -68,7 +67,7 @@ function AddAndSearchDisplay() {
         />
       </section>
       <section className="results-list">
-        <ResultsItem results={filteredResults} />
+        <ResultsTable results={filteredResults} />
       </section>
     </div>
   );
