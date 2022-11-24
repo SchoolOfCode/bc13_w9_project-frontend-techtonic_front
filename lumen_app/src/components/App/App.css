@@ -1,4 +1,7 @@
-
+.App {
+  text-align: center;
+  background-color: #002147;
+}
 
 
 .App-header {
@@ -7,7 +10,7 @@
   min-height: 150;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: auto;
   align-self: flex-start;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -19,23 +22,38 @@
   font-family: "Big Shoulders Display";
   font-size: 190px;
   font-weight: 800;
-  margin: 2px;
-  background: linear-gradient(to top,
-  rgba(255,249,174, .8) 20%, 
-  rgba(255,255,255, .3) 90%
-);
+  margin-top: 2px;
+  margin-bottom: -34px;
+  /*-webkit-text-stroke: 0.1px #AFDFE6;*/
+  background: linear-gradient(270deg, rgba(255,249,174, .8) 20%,  rgba(255,255,255, .3) 90%);
+  background-size: 600% 600%;
   background-clip:text;
   color:transparent;
-  /*-webkit-text-stroke: 0.1px #AFDFE6;*/
-  
+  -webkit-animation: lumenheader 15s ease infinite;
+  -moz-animation: lumenheader 15s ease infinite;
+  animation: lumenheader 15s ease infinite;
+}
+@-webkit-keyframes lumenheader {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes lumenheader {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes lumenheader {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 .page-subheader {
   font-family: "Big Shoulders Display";
   font-size: auto;
-  margin: 10px;
+  margin-bottom: 30px;
   color: white;
-
 }
 
 .add-and-search-container {
@@ -46,13 +64,17 @@
   min-height: 60px;
   margin-top: 30px;
   width: auto;
-  background-color: #E9DCC9;
+  background-color: #FFFDDD;
   font-family: "Open Sans";
   font-size: 22px;
 }
 
+label {
+  margin-left: 10px;
+}
+
 .search-bar {
-  padding: 10px;
+  padding: 15px;
   margin: 5px 5px 5px 5px;
   padding-right: 200px;
   margin-right: 100px;
@@ -70,7 +92,9 @@
   font-family: "Open Sans";
   font-size: 22px;
   text-align: center;
-  margin-left: 100px;
+  margin-left: 80px;
+  margin-right: 50px;
+  padding: 10px;
   cursor: pointer;
   outline: none;
   color: black;
@@ -88,21 +112,12 @@
   transform: translateY(4px);
 }
 
-.results-list-headings{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  font-family: "Open Sans";
-  color: white;
-  margin: 10px;
-
-}
-
 .results-item {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  background-color: #C3DEFC
+  background-color: #C3DEFC;
+  
 }
 
 .results-list {
@@ -111,9 +126,47 @@
 }
 
 .footer {
-background-color: rgba(3, 152, 158, 0.25);
-  /* 195, 222, 252 */
- margin-top: auto;
- min-height: 100px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+ }
+
+.footer h1 {
+ max-height: 200px;
+ margin-bottom: -30px;
+ font-family: "Big Shoulders Display";
+ font-size: 80px;
+font-weight: 400;
+color: #ff904d;
+text-shadow: rgba(255,144,4,0.61) 0px 0px 120px
 }
 
+.footer h2 {
+  font-family: "Big Shoulders Display";
+  font-size: 40px;
+ font-weight: 30;
+ color:white;
+ }
+
+
+
+.results-table{
+  width:100%;
+  font-family: "Open Sans";
+  font-size:20px;
+  overflow: auto; 
+  border-collapse: collapse; 
+  
+}
+
+.table-headers{
+  font-family: "Big Shoulders Display";
+  font-weight:800;
+  font-size:40px;
+  color:    rgba(255,249,174) ;
+  background-color: #002147;
+  position: sticky; 
+  top: 0; 
+  z-index: 1; 
+}

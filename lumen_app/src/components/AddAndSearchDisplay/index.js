@@ -68,20 +68,7 @@ function AddAndSearchDisplay() {
         />
       </section>
       <section className="results-list">
-        <ResultsHeaders />
-        {filteredResults.map((eachItem, key) => {
-          return (
-            <ResultsItem
-              key={key}
-              title={eachItem.title}
-              category={eachItem.category}
-              language={eachItem.language}
-              comment={eachItem.submission_notes}
-              link={eachItem.url}
-              date={eachItem.date.substring(0, 10)}
-            />
-          );
-        })}
+        <ResultsItem results={filteredResults} />
       </section>
     </div>
   );

@@ -20,10 +20,13 @@ function App() {
         <h1 className="page-header">LUMEN</h1>
         <h2 className="page-subheader">ENLIGHTEN YOUR LEARNING</h2>
       </header>
-      <body className="App-body">
+      <main className="App-body">
         <AddAndSearchDisplay />
-      </body>
-      <footer className="footer"></footer>
+      </main>
+      <footer className="footer">
+        <h1>TECHTONIC</h1>
+        <h2>Ground-Breaking Software Solutions</h2>
+      </footer>
     </div>
   );
 }
