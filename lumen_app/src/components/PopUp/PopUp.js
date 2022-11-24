@@ -21,7 +21,7 @@ function PopUp(props) {
 
   async function postResource() {
     try {
-      const response = await fetch("http://localhost:3001/v2/api/resources", {
+      const response = await fetch("http://localhost:3001/api/v2/resources", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=UTF-8",
