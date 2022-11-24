@@ -75,6 +75,7 @@ function PopUp(props) {
 
             <div className="details_form">
               <input
+              className="title"
                 type="text"
                 required
                 value={title}
@@ -85,6 +86,7 @@ function PopUp(props) {
 
               <label> URL </label>
               <input
+                className="URL"
                 type="text"
                 required
                 value={url}
@@ -94,6 +96,7 @@ function PopUp(props) {
               <br></br>
               <label>Language</label>
               <select
+                className="language"
                 id="languages"
                 name="languages"
                 required
@@ -134,6 +137,7 @@ function PopUp(props) {
               <br></br>
               <label>Description</label>
               <textarea
+                id = "description"
                 required
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
