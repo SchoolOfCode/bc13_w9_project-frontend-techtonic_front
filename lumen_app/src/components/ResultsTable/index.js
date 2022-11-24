@@ -1,7 +1,7 @@
 import React from "react";
 import RatingInput from "../Rating";
 
-function ResultsItem({ results }) {
+function ResultsTable({ results }) {
   return (
     <div className="results-item">
       <table className="results-table">
@@ -32,4 +32,4 @@ function ResultsItem({ results }) {
   );
 }
 
-export default ResultsItem;
+export default ResultsTable;
