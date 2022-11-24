@@ -1,17 +1,14 @@
 import React from "react";
 import RatingInput from "../Rating";
 
-function ResultsItem({ results }) {
+function ResultsTable({ results, headers }) {
   return (
     <div className="results-item">
       <table className="results-table">
         <tr className="table-headers">
-          <th>Title</th>
-          <th>Category</th>
-          <th>Language</th>
-          <th>Comment</th>
-          <th>Date</th>
-          <th>Rating</th>
+          {headers.map((header, key) => {
+            return <th key={key}>{header}</th>;
+          })}
         </tr>
         {results.map((eachItem, key) => {
           return (
@@ -32,4 +29,4 @@ function ResultsItem({ results }) {
   );
 }
 
-export default ResultsItem;
+export default ResultsTable;

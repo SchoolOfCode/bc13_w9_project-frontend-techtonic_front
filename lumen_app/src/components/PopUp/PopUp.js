@@ -21,7 +21,7 @@ function PopUp(props) {
 
   async function postResource() {
     try {
-      const response = await fetch("http://localhost:3001/api/resources", {
+      const response = await fetch("http://localhost:3001/api/v2/resources", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=UTF-8",
@@ -112,6 +112,8 @@ function PopUp(props) {
                 <option value="SQL">SQL</option>
                 <option value="ReactJS">ReactJS</option>
                 <option value="NodeJS">NodeJS</option>
+                <option value="N/A">n/a</option>
+                <option value="Other">Other</option>
               </select>
               <br></br>
               <br></br>

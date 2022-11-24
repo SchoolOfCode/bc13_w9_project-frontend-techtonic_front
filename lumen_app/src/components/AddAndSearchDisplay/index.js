@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PopUp from "../PopUp/PopUp";
 import SearchBar from "../SearchBar";
-import ResultsHeaders from "../ResultsHeaders";
-import ResultsItem from "../ResultsItem";
+import ResultsTable from "../ResultsTable";
 import Button from "../Button";
 
 function AddAndSearchDisplay() {
@@ -16,7 +15,7 @@ function AddAndSearchDisplay() {
 
   useEffect(() => {
     async function getResources() {
-      const response = await fetch("http://localhost:3001/api/resources", {
+      const response = await fetch("http://localhost:3001/api/v2/resources", {
         headers: {
           "Content-Type": "application/json;charset=UTF-8",
         },
@@ -65,10 +64,21 @@ function AddAndSearchDisplay() {
           value={searchValue}
           handleChange={handleChange}
           className="search-bar"
+          placeholder="Search by topic..."
         />
       </section>
       <section className="results-list">
-        <ResultsItem results={filteredResults} />
+        <ResultsTable
+          results={filteredResults}
+          headers={[
+            "Title",
+            "Category",
+            "Language",
+            "Comment",
+            "Date",
+            "Rating",
+          ]}
+        />
       </section>
     </div>
   );
