@@ -10,9 +10,6 @@ function PopUp(props) {
   const [language, setLanguage] = useState("");
   const [description, setDescription] = useState("");
 
-  const [post, setPost] = useState({});
-  // const [clicked, setClicked] = useState(false)
-
   useEffect(() => {
     WebFont.load({
       google: {
@@ -21,25 +18,35 @@ function PopUp(props) {
     });
   }, []);
 
-  // useEffect(() => {
-  //   async function postResource() {
-  //     await fetch("http://localhost:3001/api/resources", {
-  //       method: "POST",
-  //       body: JSON.stringify(post),
-  //     });
-  //   }
-  //   postResource();
-  // }, []);
+  async function postResource() {
+    try {
+      const response = await fetch("http://localhost:3001/api/resources", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+        body: JSON.stringify({
+          title: title,
+          url: url,
+          language: language,
+          category_id: topic,
+          submission_notes: description,
+        }),
+      });
+
+      if (response.status === 200) {
+        console.log("Resource added successfully");
+      } else {
+        console.log("Some error occurred");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
-    setPost({
-      title: title,
-      url: url,
-      language: language,
-      category_id: topic,
-      submission_notes: description,
-    });
+    postResource();
   }
 
   return props.trigger ? (
@@ -120,7 +127,9 @@ function PopUp(props) {
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
             </div>
-            <button id="close-btn">Submit</button>
+            <button id="close-btn" type="submit">
+              Submit
+            </button>
             {props.children}
           </form>
         </div>

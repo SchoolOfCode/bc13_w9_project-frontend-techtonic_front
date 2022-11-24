@@ -16,11 +16,14 @@ function AddAndSearchDisplay() {
 
   useEffect(() => {
     async function getResources() {
-      const response = await fetch("http://localhost:3001/api/resources");
+      const response = await fetch("http://localhost:3001/api/resources", {
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+      });
       const data = await response.json();
       console.log(data.payload);
       setResources([...data.payload]);
-      console.log(resources);
     }
     getResources();
   }, [searchValue]);
