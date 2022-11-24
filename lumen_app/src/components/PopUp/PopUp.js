@@ -109,6 +109,8 @@ function PopUp(props) {
                 <option value="SQL">SQL</option>
                 <option value="ReactJS">ReactJS</option>
                 <option value="NodeJS">NodeJS</option>
+                <option value="N/A">n/a</option>
+                <option value="Other">Other</option>
               </select>
               <br></br>
               <br></br>
