@@ -15,7 +15,7 @@ function AddAndSearchDisplay() {
 
   useEffect(() => {
     async function getResources() {
-      const response = await fetch("http://localhost:3001/api/resources", {
+      const response = await fetch("http://localhost:3001/v2/api/resources", {
         headers: {
           "Content-Type": "application/json;charset=UTF-8",
         },
@@ -64,10 +64,21 @@ function AddAndSearchDisplay() {
           value={searchValue}
           handleChange={handleChange}
           className="search-bar"
+          placeholder="Search by topic..."
         />
       </section>
       <section className="results-list">
-        <ResultsTable results={filteredResults} />
+        <ResultsTable
+          results={filteredResults}
+          headers={[
+            "Title",
+            "Category",
+            "Language",
+            "Comment",
+            "Date",
+            "Rating",
+          ]}
+        />
       </section>
     </div>
   );

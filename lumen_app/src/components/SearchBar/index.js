@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchBar({ value, className, handleChange }) {
+function SearchBar({ value, className, handleChange, placeholder }) {
   return (
     <div className="search-bar-container">
       <label htmlFor="search">Find resources:</label>
@@ -9,7 +9,7 @@ function SearchBar({ value, className, handleChange }) {
         type="text"
         value={value}
         onChange={handleChange}
-        placeholder="Search by topic..."
+        placeholder={placeholder}
         className={className}
       />
     </div>
