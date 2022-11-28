@@ -45,6 +45,12 @@ function AddAndSearchDisplay() {
       eachItem.category.toLowerCase().includes(searchValue.toLowerCase().trim())
     )
       return eachItem;
+    else if (
+      eachItem.submission_notes
+        .toLowerCase()
+        .includes(searchValue.toLowerCase().trim())
+    )
+      return eachItem;
   });
 
   return (
