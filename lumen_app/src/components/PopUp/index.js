@@ -34,11 +34,7 @@ function PopUp({
           Close
         </button>
         {submit === true && (
-          <p id="success-message">
-            You have successfully added a resource.
-            <br></br>
-            How about another one?
-          </p>
+          <p id="success-message">You have successfully added a resource.</p>
         )}
         <div className="form">
           <form onSubmit={handleSubmit}>

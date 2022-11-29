@@ -23,6 +23,7 @@ function AddAndSearchDisplay() {
   function handleSubmit(e) {
     e.preventDefault();
     postResource();
+    setTimeout(() => setTrigger(false), 2500);
     setSubmit(true);
     setNewResource(defaultFields);
   }
@@ -119,7 +120,10 @@ function AddAndSearchDisplay() {
         <PopUp
           className="pop-up"
           trigger={trigger}
-          handleClick={() => setTrigger(false)}
+          handleClick={() => {
+            setTrigger(false);
+            setSubmit(false);
+          }}
           handleSubmit={handleSubmit}
           submit={submit}
           resource={newResource}
