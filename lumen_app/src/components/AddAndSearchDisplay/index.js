@@ -4,14 +4,22 @@ import SearchBar from "../SearchBar";
 import ResultsTable from "../ResultsTable";
 import Button from "../Button";
 
+/** A component that contains an Add Resource button, a Search input and a table of results that filter on search.
+ * 
+ * @returns Add resource button, Search input, Table of results.
+ */
+
 function AddAndSearchDisplay() {
+  
   const defaultFields = {
     title: "",
     url: "",
     language: "",
     category: "",
     description: "",
+
   };
+
   const [searchValue, setSearchValue] = useState("");
   const [resources, setResources] = useState([]);
   const [trigger, setTrigger] = useState(false);
@@ -43,6 +51,9 @@ function AddAndSearchDisplay() {
     });
   }
 
+  /** Get resources is nested in useEffect for async functionality. It sends a fetch request to the resources API and returns all data from database. 
+   * 
+   */
   useEffect(() => {
     async function getResources() {
       const response = await fetch("http://localhost:3001/api/v2/resources", {
@@ -57,6 +68,9 @@ function AddAndSearchDisplay() {
     getResources();
   }, [submit]);
 
+  /** This allows users to post a resource into the database using the resources API POST method.
+   * 
+   */
   async function postResource() {
     try {
       const response = await fetch("http://localhost:3001/api/v2/resources", {
@@ -82,6 +96,10 @@ function AddAndSearchDisplay() {
       console.log(err);
     }
   }
+
+  /** Uses a combination of filter and map to add a search filter feature to the search input. It compares the data from the fetch request with the input value as the user is typing into the search input. Returns partial matches in real-time.
+   * 
+   */
 
   const filteredResults = resources.filter((eachItem) => {
     if (
