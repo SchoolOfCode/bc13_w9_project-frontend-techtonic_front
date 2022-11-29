@@ -1,16 +1,45 @@
 import React, { useEffect, useState } from "react";
-import PopUp from "../PopUp/PopUp";
+import PopUp from "../PopUp";
 import SearchBar from "../SearchBar";
 import ResultsTable from "../ResultsTable";
 import Button from "../Button";
 
 function AddAndSearchDisplay() {
+  const defaultFields = {
+    title: "",
+    url: "",
+    language: "",
+    category: "",
+    description: "",
+  };
   const [searchValue, setSearchValue] = useState("");
   const [resources, setResources] = useState([]);
-  const [buttonPopup, setButtonPopup] = useState(false);
+  const [trigger, setTrigger] = useState(false);
+  const [submit, setSubmit] = useState(false);
+  const [newResource, setNewResource] = useState(defaultFields);
+
+  //Handle submit for PopUp
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    postResource();
+    setSubmit(true);
+    setNewResource(defaultFields);
+  }
+
+  //handleChange for SearchBar
 
   function handleChange(e) {
-    setSearchValue(e.target.value);
+    const value = e.target.value;
+    setSearchValue(value);
+  }
+
+  function handleInput(e) {
+    const value = e.target.value;
+    setNewResource({
+      ...newResource,
+      [e.target.name]: value,
+    });
   }
 
   useEffect(() => {
@@ -25,7 +54,33 @@ function AddAndSearchDisplay() {
       setResources([...data.payload]);
     }
     getResources();
-  }, [searchValue]);
+  }, [submit]);
+
+  async function postResource() {
+    try {
+      const response = await fetch("http://localhost:3001/api/v2/resources", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+        body: JSON.stringify({
+          title: newResource.title,
+          url: newResource.url,
+          language: newResource.language,
+          category_id: newResource.category,
+          submission_notes: newResource.description,
+        }),
+      });
+
+      if (response.status === 200) {
+        console.log("Resource added successfully");
+      } else {
+        console.log("Some error occurred");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   const filteredResults = resources.filter((eachItem) => {
     if (searchValue === "") return eachItem;
@@ -58,13 +113,17 @@ function AddAndSearchDisplay() {
       <section className="add-and-search-container">
         <Button
           className="add-button"
-          handleClick={() => setButtonPopup(true)}
+          handleClick={() => setTrigger(true)}
           text="Add a resource"
         />
         <PopUp
           className="pop-up"
-          trigger={buttonPopup}
-          setTrigger={setButtonPopup}
+          trigger={trigger}
+          handleClick={() => setTrigger(false)}
+          handleSubmit={handleSubmit}
+          submit={submit}
+          resource={newResource}
+          handleChange={handleInput}
         />
         <SearchBar
           value={searchValue}

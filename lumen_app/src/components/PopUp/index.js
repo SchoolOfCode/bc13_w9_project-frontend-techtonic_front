@@ -11,14 +11,14 @@ import WebFont from "webfontloader";
  * @returns Conditionally returns the PopUp component.
  */
 
-function PopUp(trigger,setTrigger) {
-  const [title, setTitle] = useState("");
-  const [topic, setTopic] = useState("");
-  const [url, setUrl] = useState("");
-  const [language, setLanguage] = useState("");
-  const [description, setDescription] = useState("");
-  const [submit, setSubmit] = useState(false);
-
+function PopUp({
+  trigger,
+  handleClick,
+  handleSubmit,
+  submit,
+  resource,
+  handleChange,
+}) {
   useEffect(() => {
     WebFont.load({
       google: {
@@ -27,47 +27,10 @@ function PopUp(trigger,setTrigger) {
     });
   }, []);
 
-  async function postResource() {
-    try {
-      const response = await fetch("http://localhost:3001/api/v2/resources", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-        },
-        body: JSON.stringify({
-          title: title,
-          url: url,
-          language: language,
-          category_id: topic,
-          submission_notes: description,
-        }),
-      });
-
-      if (response.status === 200) {
-        console.log("Resource added successfully");
-      } else {
-        console.log("Some error occurred");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    postResource();
-    setSubmit(true);
-    setDescription("");
-    setLanguage("");
-    setTitle("");
-    setUrl("");
-    setTopic("");
-  }
-
   return trigger ? (
     <div className="popup">
       <div className="popup-inner">
-        <button className="popup-btn" onClick={() => setTrigger(false)}>
+        <button className="popup-btn" onClick={handleClick}>
           Close
         </button>
         {submit === true && (
@@ -83,11 +46,12 @@ function PopUp(trigger,setTrigger) {
 
             <div className="details_form">
               <input
-              className="title"
+                className="title"
                 type="text"
                 required
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                value={resource.title}
+                onChange={handleChange}
+                name="title"
               />
               <br></br>
               <br></br>
@@ -97,8 +61,9 @@ function PopUp(trigger,setTrigger) {
                 className="URL"
                 type="text"
                 required
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
+                value={resource.url}
+                onChange={handleChange}
+                name="url"
               />
               <br></br>
               <br></br>
@@ -106,10 +71,10 @@ function PopUp(trigger,setTrigger) {
               <select
                 className="language"
                 id="languages"
-                name="languages"
+                name="language"
                 required
-                value={language}
-                onChange={(e) => setLanguage(e.target.value)}
+                value={resource.language}
+                onChange={handleChange}
               >
                 <option value="" disabled selected>
                   Select your option
@@ -129,8 +94,8 @@ function PopUp(trigger,setTrigger) {
               <select
                 id="category"
                 name="category"
-                value={topic}
-                onChange={(e) => setTopic(e.target.value)}
+                value={resource.category}
+                onChange={handleChange}
               >
                 <option value="" disabled selected>
                   Select your option
@@ -147,10 +112,11 @@ function PopUp(trigger,setTrigger) {
               <br></br>
               <label>Description</label>
               <textarea
-                id = "description"
+                id="description"
                 required
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                value={resource.description}
+                onChange={handleChange}
+                name="description"
               ></textarea>
             </div>
             <button className="popup-btn" type="submit">
