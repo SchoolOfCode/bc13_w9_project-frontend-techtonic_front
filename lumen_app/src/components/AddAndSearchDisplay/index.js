@@ -84,24 +84,15 @@ function AddAndSearchDisplay() {
   }
 
   const filteredResults = resources.filter((eachItem) => {
-    if (searchValue === "") return eachItem;
-    else if (
-      eachItem.title.toLowerCase().includes(searchValue.toLowerCase().trim())
-    )
-      return eachItem;
-    else if (
-      eachItem.url.toLowerCase().includes(searchValue.toLowerCase().trim())
-    )
-      return eachItem;
-    else if (
-      eachItem.language.toLowerCase().includes(searchValue.toLowerCase().trim())
-    )
-      return eachItem;
-    else if (
-      eachItem.category.toLowerCase().includes(searchValue.toLowerCase().trim())
-    )
-      return eachItem;
-    else if (
+    if (
+      eachItem.title.toLowerCase().includes(searchValue.toLowerCase().trim()) ||
+      eachItem.url.toLowerCase().includes(searchValue.toLowerCase().trim()) ||
+      eachItem.language
+        .toLowerCase()
+        .includes(searchValue.toLowerCase().trim()) ||
+      eachItem.category
+        .toLowerCase()
+        .includes(searchValue.toLowerCase().trim()) ||
       eachItem.submission_notes
         .toLowerCase()
         .includes(searchValue.toLowerCase().trim())
