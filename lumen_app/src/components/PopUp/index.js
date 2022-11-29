@@ -3,7 +3,15 @@ import "./PopUp.css";
 import { useState, useEffect } from "react";
 import WebFont from "webfontloader";
 
-function PopUp(props) {
+/** The PopUp Component contains a form that allows the user to add a resource to the database. It has an add button and a close button. It is triggered when the user clicks on 'Add a resource' button (see AddAndSearchDisplay ln-59)
+ * 
+ * @param {boolean} trigger - This is a state variable is used in conditional rendering of the popup.
+ * @param {func} setTrigger - This is the function used to set the value of trigger to true. (The default value is set to false)
+
+ * @returns Conditionally returns the PopUp component.
+ */
+
+function PopUp(trigger,setTrigger) {
   const [title, setTitle] = useState("");
   const [topic, setTopic] = useState("");
   const [url, setUrl] = useState("");
@@ -56,10 +64,10 @@ function PopUp(props) {
     setTopic("");
   }
 
-  return props.trigger ? (
+  return trigger ? (
     <div className="popup">
       <div className="popup-inner">
-        <button className="popup-btn" onClick={() => props.setTrigger(false)}>
+        <button className="popup-btn" onClick={() => setTrigger(false)}>
           Close
         </button>
         {submit === true && (
