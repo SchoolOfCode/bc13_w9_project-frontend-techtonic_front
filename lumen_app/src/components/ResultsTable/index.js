@@ -1,6 +1,14 @@
 import React from "react";
 import RatingInput from "../Rating";
 
+/** This is a reusable table component.
+ * 
+ * @param {Array} results - This is an array of resources that are fetched from the database. (See AddAndSearchDisplay Ln - 30)
+ * 
+ * @param {Array} headers - This is an array of column headers (See AddAndSearchDisplay Ln - 79)
+ * 
+ * @returns A table component that is populated with results content, with column headers.
+ */
 function ResultsTable({ results, headers }) {
   return (
     <div className="results-item">
