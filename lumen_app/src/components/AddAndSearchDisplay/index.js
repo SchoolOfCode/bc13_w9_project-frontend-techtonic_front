@@ -103,8 +103,12 @@ function AddAndSearchDisplay() {
 
   const filteredResults = resources.filter((eachItem) => {
     if (
-      eachItem.title.toLowerCase().includes(searchValue.toLowerCase().trim()) ||
-      eachItem.url.toLowerCase().includes(searchValue.toLowerCase().trim()) ||
+      eachItem.title
+        .toLowerCase()
+        .includes(searchValue.toLowerCase().trim()) ||
+      eachItem.url
+        .toLowerCase()
+        .includes(searchValue.toLowerCase().trim()) ||
       eachItem.language
         .toLowerCase()
         .includes(searchValue.toLowerCase().trim()) ||
