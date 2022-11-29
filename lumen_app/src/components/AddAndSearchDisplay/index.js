@@ -99,18 +99,21 @@ function AddAndSearchDisplay() {
    *
    */
 
-  const filteredResults = resources.filter((eachItem) => {
-    if (
-      (
-        eachItem.title.toLowerCase() ||
-        eachItem.url.toLowerCase() ||
-        eachItem.language.toLowerCase() ||
-        eachItem.category.toLowerCase() ||
-        eachItem.submission_notes.toLowerCase()
-      ).includes(searchValue)
-    )
-      return eachItem;
-  });
+  function findMatch(key) {
+    return key.toLowerCase().includes(searchValue);
+  }
+
+  const filteredResults = resources.filter(
+    ({ title, url, language, category, submission_notes }) => {
+      return (
+        findMatch(title) ||
+        findMatch(url) ||
+        findMatch(language) ||
+        findMatch(category) ||
+        findMatch(submission_notes)
+      );
+    }
+  );
 
   return (
     <div>
