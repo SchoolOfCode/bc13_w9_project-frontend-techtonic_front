@@ -5,19 +5,17 @@ import ResultsTable from "../ResultsTable";
 import Button from "../Button";
 
 /** A component that contains an Add Resource button, a Search input and a table of results that filter on search.
- * 
+ *
  * @returns Add resource button, Search input, Table of results.
  */
 
 function AddAndSearchDisplay() {
-  
   const defaultFields = {
     title: "",
     url: "",
     language: "",
     category: "",
     description: "",
-
   };
 
   const [searchValue, setSearchValue] = useState("");
@@ -40,7 +38,7 @@ function AddAndSearchDisplay() {
 
   function handleChange(e) {
     const value = e.target.value;
-    setSearchValue(value);
+    setSearchValue(value.toLowerCase().trim());
   }
 
   function handleInput(e) {
@@ -51,8 +49,8 @@ function AddAndSearchDisplay() {
     });
   }
 
-  /** Get resources is nested in useEffect for async functionality. It sends a fetch request to the resources API and returns all data from database. 
-   * 
+  /** Get resources is nested in useEffect for async functionality. It sends a fetch request to the resources API and returns all data from database.
+   *
    */
   useEffect(() => {
     async function getResources() {
@@ -69,7 +67,7 @@ function AddAndSearchDisplay() {
   }, [submit]);
 
   /** This allows users to post a resource into the database using the resources API POST method.
-   * 
+   *
    */
   async function postResource() {
     try {
@@ -98,26 +96,18 @@ function AddAndSearchDisplay() {
   }
 
   /** Uses a combination of filter and map to add a search filter feature to the search input. It compares the data from the fetch request with the input value as the user is typing into the search input. Returns partial matches in real-time.
-   * 
+   *
    */
 
   const filteredResults = resources.filter((eachItem) => {
     if (
-      eachItem.title
-        .toLowerCase()
-        .includes(searchValue.toLowerCase().trim()) ||
-      eachItem.url
-        .toLowerCase()
-        .includes(searchValue.toLowerCase().trim()) ||
-      eachItem.language
-        .toLowerCase()
-        .includes(searchValue.toLowerCase().trim()) ||
-      eachItem.category
-        .toLowerCase()
-        .includes(searchValue.toLowerCase().trim()) ||
-      eachItem.submission_notes
-        .toLowerCase()
-        .includes(searchValue.toLowerCase().trim())
+      (
+        eachItem.title.toLowerCase() ||
+        eachItem.url.toLowerCase() ||
+        eachItem.language.toLowerCase() ||
+        eachItem.category.toLowerCase() ||
+        eachItem.submission_notes.toLowerCase()
+      ).includes(searchValue)
     )
       return eachItem;
   });
