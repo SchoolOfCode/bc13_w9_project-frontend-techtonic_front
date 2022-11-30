@@ -1,6 +1,6 @@
 import React from "react";
 import "./PopUp.css";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import WebFont from "webfontloader";
 
 /** The PopUp Component contains a form that allows the user to add a resource to the database. It has an add button and a close button. It is triggered when the user clicks on 'Add a resource' button (see AddAndSearchDisplay ln-59)
@@ -33,13 +33,12 @@ function PopUp({
         <button className="popup-btn" onClick={handleClick}>
           Close
         </button>
-        {submit === true && (
+        {submit && (
           <p id="success-message">You have successfully added a resource.</p>
         )}
         <div className="form">
           <form onSubmit={handleSubmit}>
             <label>Title</label>
-
             <div className="details_form">
               <input
                 className="title"
@@ -51,7 +50,6 @@ function PopUp({
               />
               <br></br>
               <br></br>
-
               <label> URL </label>
               <input
                 className="URL"
@@ -81,7 +79,7 @@ function PopUp({
                 <option value="SQL">SQL</option>
                 <option value="ReactJS">ReactJS</option>
                 <option value="NodeJS">NodeJS</option>
-                <option value="N/A">n/a</option>
+                <option value="N/A">N/A</option>
                 <option value="Other">Other</option>
               </select>
               <br></br>
