@@ -12,7 +12,7 @@ import { v4 as uuidv4 } from "uuid";
  */
 function ResultsTable({ results, headers }) {
   return (
-    <div className="results-item">
+    <div className="table">
       <table className="results-table">
         <tr className="table-headers">
           {headers.map((header) => {

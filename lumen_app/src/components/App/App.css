@@ -112,9 +112,9 @@ label {
   transform: translateY(4px);
 }
 
-.results-item {
+.table {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: flex-start;
   background-color: #C3DEFC;
   
@@ -161,6 +161,7 @@ text-shadow: rgba(255,144,4,0.61) 0px 0px 120px
 }
 
 .table-headers{
+  align-self: auto;
   font-family: "Big Shoulders Display";
   font-weight:800;
   font-size:40px;
