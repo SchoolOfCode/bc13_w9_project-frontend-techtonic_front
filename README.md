@@ -44,11 +44,11 @@ It's value resides in the fact that it is curated by the cohort – meaning that
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Oxford Blue | ![#002147](https://via.placeholder.com/10/002147?text=+) #002147|
-| Riviera Paradise | ![#03989E](https://via.placeholder.com/10/03989E?text=+) #03989E|
-| Ice Cold Stare | ![#C3DEFC](https://via.placeholder.com/10/C3DEFC?text=+) #C3DEFC |
-| Delta Pale Yellow | ![#FFF9AE](https://via.placeholder.com/10/FFF9AE?text=+) #FFF9AE |
-| Scotch Mist | ![#FFFDDD](https://via.placeholder.com/10/FFFDDD?text=+) #FFFDDD |
+| Oxford Blue |  #002147|
+| Riviera Paradise |  #03989E|
+| Ice Cold Stare | #C3DEFC |
+| Delta Pale Yellow | #FFF9AE |
+| Scotch Mist | #FFFDDD |
 
 
 ## Authors
