@@ -17,5 +17,5 @@ test('renders results table', () => {
   render(<App />);
   const resultElement = screen.getByText("Category");
   expect(resultElement).toBeInTheDocument();
-});
+})
 
