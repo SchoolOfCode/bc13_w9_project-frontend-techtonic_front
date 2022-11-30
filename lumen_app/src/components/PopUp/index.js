@@ -11,7 +11,7 @@ import Button from "../Button";
  * @component
  * @returns Conditionally returns the PopUp component.
  */
-//JUST SEEING IF CI WORKS
+//JUST SEEING IF CI WORKS!
 
 function PopUp({
   trigger,
