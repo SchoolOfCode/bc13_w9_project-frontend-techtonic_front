@@ -160,7 +160,9 @@ text-shadow: rgba(255,144,4,0.61) 0px 0px 120px
   
 }
 
+
 .table-headers{
+  
   align-self: auto;
   font-family: "Big Shoulders Display";
   font-weight:800;
@@ -171,3 +173,21 @@ text-shadow: rgba(255,144,4,0.61) 0px 0px 120px
   top: 0; 
   z-index: 1; 
 }
+
+/*
+.table-header :nth-child(0) {
+  flex-grow: 1;
+}
+
+.table-header :nth-child(1) {
+  flex-grow: 2;
+}
+
+.table-header :nth-child(2) {
+  flex-grow: 3;
+}
+
+.table-header :nth-child(3) {
+  flex-grow: 4;
+}
+*/
