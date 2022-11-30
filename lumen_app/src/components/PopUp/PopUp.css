@@ -1,0 +1,105 @@
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index:3;
+    
+}
+
+.popup-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 32px;
+    margin-top: 10vh;
+    width: auto;
+    min-height: 60vh;
+    max-height: 80vh;
+    background-color:#FFFDDD;
+    box-shadow: 1px 1px 100px #CDCBC1;
+    overflow: auto;
+    flex: 1;
+    border-radius: 15px;
+    border: 1px solid whitesmoke;
+    
+}
+
+.popup-inner .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-family: "Open Sans";
+    font-size: 14px;
+    margin-right: 6vh;
+    margin-top: 2em;
+
+}
+
+
+  
+.form {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: "Open Sans";
+    font-size: 18px;
+}
+/* .details {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc (100% /2 -20px);
+} */
+.form label {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#success-message{
+    margin-top: 5vh;
+    margin-bottom:-30px;
+}
+
+textarea {
+    width: 340px;
+    height: 110px;
+}
+
+input {
+    width: 200px;
+    
+}
+
+.popup-btn {
+    font-family: "Open Sans";
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    color: black;
+    background-color: #C3DEFC;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px #999;
+  }
+  
+  .popup-btn:hover {background-color: #82BBFB}
+  
+  .popup-btn:active {
+    background-color: #82BBFB;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
