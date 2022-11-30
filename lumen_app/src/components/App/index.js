@@ -4,6 +4,11 @@ import { useEffect } from "react";
 import AddAndSearchDisplay from "../AddAndSearchDisplay";
 import WebFont from "webfontloader";
 
+
+/** This is the App component, the parent component of the Lumen app. It simply contains a header, footer and AddAndSearchDisplay.
+ * @component
+ * @returns  The app and child components. 
+ */
 function App() {
   useEffect(() => {
     WebFont.load({
