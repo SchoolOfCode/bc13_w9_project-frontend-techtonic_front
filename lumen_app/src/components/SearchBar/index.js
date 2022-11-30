@@ -9,7 +9,7 @@ import React from "react";
  * compares the user input with the Resources state (set initially to contain all resources from database fetch request (see AddAndSearchDisplay Ln - 17)) returning any results in the Resources state that contain a partial match.
  * 
  * @param {string} placeholder - A string that sets the text displayed in the input before any the user types to search..
- * 
+ * @component
  * @returns A search bar that calls a handleChange function as the user types to search.
  */
 function SearchBar({ value, className, handleChange, placeholder }) {

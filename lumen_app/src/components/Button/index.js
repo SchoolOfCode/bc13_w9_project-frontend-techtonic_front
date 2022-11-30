@@ -6,7 +6,7 @@ import React from "react";
  * @param {string} text - Will be the value of the text as inputted.
  * @param {func} handleClick - Will be the action that is triggered when the button is clicked.
  * @param {string} id - Will be the value of the id as inputted.
- * 
+ * @component
  * @returns a button component.
  */
 function Button({ className, text, handleClick, id }) {

@@ -15,6 +15,7 @@ const StyledRating = styled(Rating)({
 
 /** This is a rating component that allows the user to click on an icon to rate from 1-5. It has been customised using react icons. Uses MUI library.
  * 
+ * @component
  * @returns A customised rating component.
  */
 function RatingInput() {

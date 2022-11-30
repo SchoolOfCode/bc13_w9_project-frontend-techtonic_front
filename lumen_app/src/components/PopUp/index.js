@@ -7,7 +7,7 @@ import WebFont from "webfontloader";
  * 
  * @param {boolean} trigger - This is a state variable is used in conditional rendering of the popup.
  * @param {func} setTrigger - This is the function used to set the value of trigger to true. (The default value is set to false)
-
+ * @component
  * @returns Conditionally returns the PopUp component.
  */
 

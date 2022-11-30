@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from "uuid";
  * @param {Array} results - This is an array of resources that are fetched from the database. (See AddAndSearchDisplay Ln - 30)
  *
  * @param {Array} headers - This is an array of column headers (See AddAndSearchDisplay Ln - 79)
- *
+ * @component
  * @returns A table component that is populated with results content, with column headers.
  */
 function ResultsTable({ results, headers }) {
