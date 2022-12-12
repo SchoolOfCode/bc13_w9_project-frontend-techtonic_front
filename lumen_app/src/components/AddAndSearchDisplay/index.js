@@ -54,11 +54,14 @@ function AddAndSearchDisplay() {
    */
   useEffect(() => {
     async function getResources() {
-      const response = await fetch("http://localhost:3001/api/v2/resources", {
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-        },
-      });
+      const response = await fetch(
+        "https://lumen-api.onrender.com/api/v2/resources",
+        {
+          headers: {
+            "Content-Type": "application/json;charset=UTF-8",
+          },
+        }
+      );
       const data = await response.json();
       console.log(data.payload);
       setResources([...data.payload]);
@@ -71,19 +74,22 @@ function AddAndSearchDisplay() {
    */
   async function postResource() {
     try {
-      const response = await fetch("http://localhost:3001/api/v2/resources", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-        },
-        body: JSON.stringify({
-          title: newResource.title,
-          url: newResource.url,
-          language: newResource.language,
-          category_id: newResource.category,
-          submission_notes: newResource.description,
-        }),
-      });
+      const response = await fetch(
+        "https://lumen-api.onrender.com/api/v2/resources",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=UTF-8",
+          },
+          body: JSON.stringify({
+            title: newResource.title,
+            url: newResource.url,
+            language: newResource.language,
+            category_id: newResource.category,
+            submission_notes: newResource.description,
+          }),
+        }
+      );
 
       if (response.status === 200) {
         console.log("Resource added successfully");
