@@ -1,0 +1,19 @@
+//import useState and useEffect from react
+//pass localStorage key in as a paremeter of the hook
+//declare state variables in top level and useState
+
+import { useState, useEffect } from "react";
+
+function usePersistentState(key) {
+  const [storageValue, setStorageValue] = useState(
+    localStorage.getItem(key) || ""
+  );
+
+  useEffect(() => {
+    localStorage.setItem(key, storageValue);
+  });
+
+  return [storageValue, setStorageValue];
+}
+
+export default usePersistentState;
