@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   background-color: #002147;
+  display:flex;
+  flex-direction: column;
 }
 
 
@@ -10,13 +12,21 @@
   min-height: 150;
   display: flex;
   flex-direction: column;
+  width: 100vw;
   align-items: auto;
   align-self: flex-start;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  flex-grow: 0;
+  flex-shrink: 0;
   
   
 }
+
+.App-body {
+  flex-grow:1;
+}
+
 
 .page-header {
   font-family: "Big Shoulders Display";
@@ -122,31 +132,46 @@ label {
 
 .results-list {
   overflow-y: scroll; 
-  height:500px;
+  height:580px;
 }
 
 .footer {
   display:flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow:0;
+  margin-top: 10px;
+  padding-top: -15px;
+  
+
+
+  
   
  }
 
 .footer h1 {
- max-height: 200px;
- margin-bottom: -30px;
+ 
+ flex:1;
+ max-height: 80px;
+ margin-top: 80px;
+ margin-bottom: -15px;
  font-family: "Big Shoulders Display";
- font-size: 80px;
-font-weight: 400;
-color: #ff904d;
-text-shadow: rgba(255,144,4,0.61) 0px 0px 120px
+ font-size: 40px;
+ font-weight: 400;
+ color: #ff904d;
+ text-shadow: rgba(255,144,4,0.61) 0px 0px 120px
 }
 
 .footer h2 {
+  
+  flex:1;
   font-family: "Big Shoulders Display";
-  font-size: 40px;
- font-weight: 30;
- color:white;
+  font-size: 25px;
+  font-weight: 30;
+  color:white;
+
  }
 
 

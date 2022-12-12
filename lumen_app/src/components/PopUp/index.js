@@ -37,9 +37,6 @@ function PopUp({
             handleClick={handleClick}
             text="Close"
           />
-          {submit && (
-            <p id="success-message">You have successfully added a resource.</p>
-          )}
           <div className="form">
             <form onSubmit={handleSubmit}>
               <label>Title</label>
@@ -118,6 +115,9 @@ function PopUp({
                 ></textarea>
               </div>
               <Button className="popup-btn" type="submit" text="Submit" />
+              {submit && (
+            <p id="success-message">You have successfully added a resource.</p>
+          )}
             </form>
           </div>
         </div>
