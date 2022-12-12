@@ -132,7 +132,7 @@ label {
 
 .results-list {
   overflow-y: scroll; 
-  height:580px;
+  height:600px;
 }
 
 .footer {
@@ -187,7 +187,6 @@ label {
 
 
 .table-headers{
-  
   align-self: auto;
   font-family: "Big Shoulders Display";
   font-weight:800;

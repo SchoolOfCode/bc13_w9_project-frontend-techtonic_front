@@ -31,7 +31,7 @@ function RatingInput() {
         setRatingValue(newValue);
       }}
       sx={{
-        fontSize: "2rem",
+        fontSize: "1.8rem",
       }}
     />
   );
