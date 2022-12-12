@@ -30,6 +30,9 @@ function RatingInput() {
       onChange={(event, newValue) => {
         setRatingValue(newValue);
       }}
+      sx={{
+        fontSize: "2rem",
+      }}
     />
   );
 }
