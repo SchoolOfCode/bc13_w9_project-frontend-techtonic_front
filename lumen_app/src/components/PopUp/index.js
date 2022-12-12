@@ -118,8 +118,10 @@ function PopUp({
               </div>
               <Button className="popup-btn" type="submit" text="Submit" />
               {submit && (
-            <p id="success-message">You have successfully added a resource.</p>
-          )}
+                <p id="success-message">
+                  You have successfully added a resource.
+                </p>
+              )}
             </form>
           </div>
         </div>

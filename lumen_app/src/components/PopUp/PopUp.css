@@ -22,8 +22,8 @@
     padding: 32px;
     margin-top: 10vh;
     width: auto;
-    min-height: 60vh;
-    max-height: 80vh;
+    max-height: 55vh;
+    width:350px;
     background-color:#FFFDDD;
     box-shadow: 1px 1px 100px #CDCBC1;
     overflow: auto;
@@ -33,18 +33,6 @@
     
 }
 
-.popup-inner .close-btn {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    font-family: "Open Sans";
-    font-size: 14px;
-    margin-right: 6vh;
-    margin-top: 2em;
-
-}
-
-
   
 .form {
     display: flex;
@@ -53,7 +41,7 @@
     text-align: center;
     align-items: center;
     font-family: "Open Sans";
-    font-size: 18px;
+    font-size: 20px;
 }
 /* .details {
     display: flex;
@@ -72,8 +60,10 @@
 }
 
 textarea {
-    width: 340px;
-    height: 110px;
+    min-width: 300px;
+    max-width: 340px;
+    min-height:90px;
+    max-height: 110px;
 }
 
 input {
@@ -93,6 +83,7 @@ input {
     border: none;
     border-radius: 15px;
     box-shadow: 0 6px #999;
+    margin-top: 20px;
   }
   
   .popup-btn:hover {background-color: #82BBFB}
