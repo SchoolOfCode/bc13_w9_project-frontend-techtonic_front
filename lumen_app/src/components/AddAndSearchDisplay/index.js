@@ -27,11 +27,11 @@ function AddAndSearchDisplay() {
   //Handle submit for PopUp
 
   function handleSubmit(e) {
-    e.preventDefault();
-    postResource();
-    setTimeout(() => setTrigger(false), 2500);
+    e.preventDefault(); //prevents submission on enter key press
+    postResource(); //fetch POST request
+    setTimeout(() => setTrigger(false), 2500); //causes popup to disappear after submit
     setSubmit(true);
-    setNewResource(defaultFields);
+    setNewResource(defaultFields); //resets the newResource state to empty default fields
   }
 
   //handleChange for SearchBar
@@ -40,6 +40,8 @@ function AddAndSearchDisplay() {
     const value = e.target.value;
     setSearchValue(value.toLowerCase().trim());
   }
+
+  //this is to assign values to newResource object from inputs
 
   function handleInput(e) {
     const value = e.target.value;
@@ -109,6 +111,7 @@ function AddAndSearchDisplay() {
     return key.toLowerCase().includes(searchValue);
   }
 
+  //results filtered to display in table
   const filteredResults = resources.filter(
     ({ title, url, language, category, submission_notes }) => {
       return (
@@ -133,10 +136,11 @@ function AddAndSearchDisplay() {
           className="pop-up"
           trigger={trigger}
           handleClick={() => {
+            //for close-button
             setTrigger(false);
             setSubmit(false);
           }}
-          handleSubmit={handleSubmit}
+          handleSubmit={handleSubmit} //for submit-button
           submit={submit}
           resource={newResource}
           handleChange={handleInput}
