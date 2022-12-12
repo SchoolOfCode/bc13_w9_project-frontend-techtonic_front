@@ -3,7 +3,6 @@ import { HiOutlineLightBulb } from "react-icons/hi";
 import Rating from "@mui/material/Rating";
 import { useState } from "react";
 import { styled } from "@mui/material/styles";
-//import usePersistentState from "../../hooks/usePersistentState";
 
 const StyledRating = styled(Rating)({
   "& .MuiRating-iconFilled": {
@@ -30,7 +29,6 @@ function RatingInput() {
       emptyIcon={<HiOutlineLightBulb />}
       onChange={(event, newValue) => {
         setRatingValue(newValue);
-        console.log(newValue.toString);
       }}
     />
   );
