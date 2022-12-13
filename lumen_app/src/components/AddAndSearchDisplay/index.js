@@ -129,7 +129,10 @@ function AddAndSearchDisplay() {
       <section className="add-and-search-container">
         <Button
           className="add-button"
-          handleClick={() => setTrigger(true)}
+          handleClick={() => {
+            setTrigger(true);
+            setSubmit(false);
+          }}
           text="Add a resource"
         />
         <PopUp
