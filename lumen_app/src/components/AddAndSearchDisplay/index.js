@@ -131,7 +131,7 @@ function AddAndSearchDisplay() {
           className="add-button"
           handleClick={() => {
             setTrigger(true);
-            setSubmit(false);
+            setTimeout(() => setSubmit(false), 700); //without this timeout the posted resource won't be there unless on refresh
           }}
           text="Add a resource"
         />
