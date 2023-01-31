@@ -9,7 +9,7 @@
 
 # Lumen App by TECHTONIC
 
-Lumen is A learning resource library that provides a single point of searchable content.
+Lumen is a learning resource library that provides a single point of searchable content.
 
 It's value resides in the fact that it is curated by the cohort – meaning that not only is the content current, but it is relevant to the technologies and standards that are being taught and used by the bootcampers at that time.
 
